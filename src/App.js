@@ -26,6 +26,7 @@ function App() {
     });
   
     function registerClicked() {
+      // alert('register clicked')
       setRegistartionFormStatus(true);
     }
     function loginClicked() {
@@ -53,20 +54,32 @@ function App() {
         </animated.button>
         </Link>
      </div>
-     <div className= "form-group">
-       <Switch>
+    
+     {/* <div className= "form-group">
+     <Switch>
      <animated.form action="" id="loginform" style={loginProps}>
-       <Route path = '/login' component = {LoginForm}/>
-          
+       <Route exact path = '/' component = {LoginForm}/>
+        </animated.form>
+     <animated.form action="" id="loginform" style={loginProps}>
+       <Route exact path = '/login' component = {LoginForm}/>
         </animated.form>
         <animated.form action="" id="registerform" style={registerProps}>
-       <Route path = '/register' component = {RegisterForm}/>
+       <Route exact path = '/register' component = {RegisterForm}/>
         </animated.form>
         </Switch>
+     </div> */}
+
+     <div className="form-group">
+       <Switch>
+         <Route exact path='/' component = {LoginForm} />
+         <Route path='/login' component = {LoginForm} />
+         <Route path='/register' component={RegisterForm} />
+       </Switch>
      </div>
+   
 
      <animated.div className="forgot-panel" style={loginProps}>
-        <a herf="#">Forgot your password ? </a>
+        <a href="#">Forgot your password ? </a>
       </animated.div>
     </div>
     </Router>
